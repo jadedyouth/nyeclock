@@ -53,7 +53,7 @@ twenty17 ();
 
 
 //COUNTDOWN
-else if (month == 12 && day == 30 && hour == 18 ) {
+else if (month == 12 && day == 31 && hour == 23 ) {
 
 dots ();
 //Determine seconds, minutes remaining

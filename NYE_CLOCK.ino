@@ -106,7 +106,7 @@ void setup()
   FastLED.addLeds<APA102,48,49,BGR>(leds, 12, 24);
   FastLED.addLeds<APA102,50,51,BGR>(leds, 24, 36);
   FastLED.addLeds<APA102,44,45,BGR>(leds, 36, LED_COUNT);
-  FastLED.setBrightness(55);
+  FastLED.setBrightness(255);
   Wire.begin();
   Serial.begin(9600);
  
