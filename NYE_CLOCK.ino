@@ -6,7 +6,8 @@
 #define LED_COUNT 94    
 struct CRGB leds[LED_COUNT];
 
-
+int hour;
+int mode = 12; //change to 12 or 24 for 12 or 24 hour time. maybe add a physical switch later?
 
 //switch values for blackening between numbers
 int sw8;
@@ -106,7 +107,7 @@ void setup()
   FastLED.addLeds<APA102,48,49,BGR>(leds, 12, 24);
   FastLED.addLeds<APA102,50,51,BGR>(leds, 24, 36);
   FastLED.addLeds<APA102,44,45,BGR>(leds, 36, LED_COUNT);
-  FastLED.setBrightness(255);
+  FastLED.setBrightness(50);
   Wire.begin();
   Serial.begin(9600);
  
@@ -126,6 +127,6 @@ on ();
  
   //displayTimeRemaining ();
   
- // displayTime(); // display the real-time clock data on the Serial Monitor,
+  displayTime(); // display the real-time clock data on the Serial Monitor,
  // delay(1000); // every second
 }

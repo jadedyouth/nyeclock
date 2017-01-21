@@ -625,7 +625,7 @@ LEDS.show();
 
 void h01 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z1; i++){
@@ -635,7 +635,7 @@ LEDS.show();
 
 void h02 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z2; i++){
@@ -646,7 +646,7 @@ LEDS.show();
 
 void h03 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z3; i++){
@@ -657,7 +657,7 @@ LEDS.show();
 
 void h04 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z4; i++){
@@ -667,7 +667,7 @@ LEDS.show();
 
 void h05 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z5; i++){
@@ -677,7 +677,7 @@ LEDS.show();
 
 void h06 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z6; i++){
@@ -687,7 +687,7 @@ LEDS.show();
 
 void h07 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z7; i++){
@@ -697,7 +697,7 @@ LEDS.show();
 
 void h08 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z8; i++){
@@ -707,7 +707,7 @@ LEDS.show();
 
 void h09 () {
     for (int i = 0; i< z0; i++){
-leds[a0[i]] = CHSV (huea, 255, 255); }
+leds[a0[i]] = CHSV (huea, 255, 0); }
 LEDS.show(); 
 
 for (int i = 0; i< z9; i++){

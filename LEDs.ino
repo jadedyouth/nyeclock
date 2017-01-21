@@ -34,12 +34,23 @@ void on (){
  //turn on the middle colon
 
 //GET TIME FROM RTC
-byte second, minute, hour, dayOfWeek, day, month, year;
+byte second, minute, thour, dayOfWeek, day, month, year; //thour = hour set for daylight savings
   // retrieve data from DS3231
-  readDS3231time(&second, &minute, &hour, &dayOfWeek, &day, &month,
+  readDS3231time(&second, &minute, &thour, &dayOfWeek, &day, &month,
   &year);
 
+//DAYLIGHT SAVINGS MODIFIER
+//time was set during daylight savings, couldn't be arsed to reset it and make the code add an hour, 
+//was much easier to just keep it and subtract one for when daylight savings ended
+//on the day it changes
+//has to be done in stages because each unit ticks over seperately, doesn't affect the next by itself
+if (year == 2017 && month == 4 && day == 2 && thour >= 3) {hour = thour-1;}
+if (year == 2017 && month == 4 && day >= 3) {hour = thour-1;}
+if (year == 2017 && month >= 5 && month < 10 ) {hour = thour-1;}
+if (year == 2017 && month == 10 && day == 1 && thour < 2) {hour = thour-1;}
+else hour = thour; 
 
+/* commented out post nyd
 
 //AT MIDNIGHT
 if (month == 1 && day == 1 && hour == 0) {
@@ -50,11 +61,13 @@ twenty17 ();
   
 }
 
-
+*/
 
 //COUNTDOWN
-else if (month == 12 && day == 31 && hour == 23 ) {
+//else if (month == 12 && day == 31 && hour == 23 ) { commented out post nyd
 
+if (hour == 23 ) { 
+  while (sw8 == 0) { blackm (); blackh (); sw8 = 1;} //clears leds when switching to countdown
 dots ();
 //Determine seconds, minutes remaining
 sr = 60 - second;
@@ -215,6 +228,7 @@ switch (mr) {
 
 //NORMAL CLOCK
 else {
+ 
   dots ();
 //to tirn the minute pixels black between changes
 sw = minute;
@@ -296,7 +310,7 @@ if (sw2 != sw3) {
   sw3 = sw2;
 }
 
-
+if (mode == 24) {
 switch (hour) {
 
  case 0:    h00 ();  break;  
@@ -326,8 +340,45 @@ switch (hour) {
  case 24:   h24 ();  break; 
  break;
  }
+}
+
+if (mode == 12) {
+
+switch (hour) {
+
+ case 0:    h12 ();  break;  
+ case 1:    h01 ();  break;  
+ case 2:    h02 ();  break; 
+ case 3:    h03 ();  break; 
+ case 4:    h04 ();  break; 
+ case 5:    h05 ();  break; 
+ case 6:    h06 ();  break; 
+ case 7:    h07 ();  break;  
+ case 8:    h08 ();  break; 
+ case 9:    h09 ();  break; 
+ case 10:   h10 ();  break; 
+ case 11:   h11 ();  break;  
+ case 12:   h12 ();  break; 
+ case 13:   h01 ();  break; 
+ case 14:   h02 ();  break; 
+ case 15:   h03 ();  break; 
+ case 16:   h04 ();  break; 
+ case 17:   h05 ();  break;  
+ case 18:   h06 ();  break; 
+ case 19:   h07 ();  break; 
+ case 20:   h08 ();  break; 
+ case 21:   h09 ();  break;  
+ case 22:   h10 ();  break; 
+ case 23:   h11 ();  break; 
+ case 24:   h12 ();  break; 
+ break;
+ }
+}
+
+ sw8 = 0; //the switch that clears the leds when it switches to countdown md, turned back on.
 
 }
+
 }
 
  
